@@ -1,4 +1,4 @@
-This is an archive of an abandoned, but interesting project.
+This is an archive/dump of an abandoned, but interesting project. (Sorry for non-existent documentation.)
 
 # SLiM
 A nesC clone for C++ applications.  

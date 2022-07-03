@@ -1,0 +1,38 @@
+<App>
+	
+	<Module type="A">
+		<Uses from="SubApp1" if="PrinterIn" as="Printer" />
+		<Uses from="Tee" if="EventOut" as="StopPrinter" />
+	</Module>
+	
+	<Configuration name="SubApp1">
+		<Provides from="Tee" if="EventOut" as="PrinterIn"/>
+		<Uses from="SubApp2" if="PrinterIn" as="PrinterOut" />
+		
+		<Module type="Tee">
+			<Provides if="IEvent" as="EventOut" />
+			<Uses port="PrinterOut" as="EventIn" />
+		</Module>
+	</Configuration>
+	
+	<Configuration name="SubApp2">
+		<Provides from="SubApp4" if="PrinterIn"/>
+		<Uses from="Sink" if="Printer" as="PrinterOut" />
+	
+		<Configuration name="SubApp4">
+			<Provides port="Cloned" as="PrinterIn"/>
+			<Uses port="PrinterOut" as="Cloned" />
+		</Configuration>
+		
+	</Configuration>
+			
+	<Module type="Tee">
+		<Provides if="IEvent" as="EventOut" />
+		<Uses from="Sink" if="StopPrinter" as="EventIn" />
+	</Module>
+	
+	<Module type="B" name="Sink">
+		<Provides if="IEvent" as="Printer" />
+		<Provides if="IEvent" as="StopPrinter" />
+	</Module>
+</App>

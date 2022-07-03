@@ -1,0 +1,11 @@
+interface Time;
+
+command{
+	void set_timeout(int time, bool flag);
+	bool start();
+	void stop();
+}
+
+signal{
+	void timeout(int time);
+}

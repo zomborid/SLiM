@@ -1,0 +1,19 @@
+configuration BootableC;
+
+use (
+	Boot as Init
+)
+
+components (
+	Bootable,
+	new Bootable as Inited
+)
+
+provide (
+)
+
+routing {
+	Bootable.Boot -> Init;
+	Inited.Boot -> Init;
+}
+

@@ -1,0 +1,20 @@
+configuration TimedC;
+
+use (
+	Time
+)
+
+components (
+	System,
+	TimedP
+)
+
+provide (
+)
+
+routing {
+	TimedP.Boot -> System.Boot;
+	TimedP.Scheduler -> System.Scheduler;
+	TimedP.Time -> Time;
+}
+

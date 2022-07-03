@@ -1,0 +1,16 @@
+configuration config3;
+
+use (
+)
+
+components (
+	TimedC,
+	TimerC
+)
+
+provide (
+)
+
+routing {
+	TimedC.Time -> TimerC.Time;
+}

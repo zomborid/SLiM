@@ -1,0 +1,18 @@
+configuration config4;
+
+use (
+)
+
+components (
+	ParameteredC<I1=1,T1=uint8_t,I2=2,IM3=-3>,
+	AccessPoint as AP,
+	//System,
+	new ParameteredP<I1=0,I2=0,IM3=0,T1=int,T2=int> as P
+)
+
+provide (
+)
+
+routing {
+	P.Boot -> AP.Boot;
+}

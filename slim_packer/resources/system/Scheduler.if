@@ -1,0 +1,10 @@
+interface Scheduler;
+
+command{
+	void exit();
+}
+
+signal{
+	void startup();
+	void idle();
+}

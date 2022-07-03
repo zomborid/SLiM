@@ -1,0 +1,7 @@
+interface Boot;
+
+command{}
+
+signal{
+	void booted();
+}

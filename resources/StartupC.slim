@@ -1,0 +1,17 @@
+configuration StartupC;
+
+use (
+)
+
+components (
+	Startup as SU
+)
+
+provide (
+	Boot as Start
+)
+
+routing {
+	Start -> SU.B;
+}
+

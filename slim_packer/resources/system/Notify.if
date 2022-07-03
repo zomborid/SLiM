@@ -1,0 +1,8 @@
+interface Notify;
+
+command{
+}
+
+signal{
+	void notify();
+}

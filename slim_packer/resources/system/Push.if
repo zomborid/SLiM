@@ -1,0 +1,8 @@
+interface Push;
+
+command{
+	void push(auto value);
+}
+
+signal{
+}

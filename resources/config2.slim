@@ -1,0 +1,17 @@
+configuration config2;
+
+use (
+)
+
+components (
+	BootableC,
+	System
+)
+
+provide (
+)
+
+routing {
+	BootableC.Init -> System.Boot;
+}
+

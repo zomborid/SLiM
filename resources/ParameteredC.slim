@@ -1,0 +1,19 @@
+configuration ParameteredC<I1,I2,IM3,T1>;
+
+use (
+)
+
+components (
+	System,
+	new ParameteredP<I1=I1,I2=I2,IM3=IM3,T1=T1,T2=uint16_t> as P1,
+	new ParameteredP<I1=-1,I2=-2,IM3=3,T1=uint16_t,T2=T1> as P2
+)
+
+provide (
+)
+
+routing {
+	P1.Boot -> System.Boot;
+	P2.Boot -> System.Boot;
+}
+

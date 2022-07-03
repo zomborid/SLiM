@@ -1,0 +1,20 @@
+configuration TimerC;
+
+use (
+
+)
+
+components (
+	System,
+	TimerP
+)
+
+provide (
+	Time
+)
+
+routing {
+	TimerP.Boot -> System.Boot;
+	Time -> TimerP.Time;
+}
+
